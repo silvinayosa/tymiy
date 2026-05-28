@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>TymiY — Digital solutions for Indonesia's F&B</title>
+<meta name="description" content="TymiY helps Indonesian F&B UMKM go digital with QR ordering, online menus and operations tools — built for warungs, cafés, and small restaurants." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="preload" href="illustrations.js" as="script">
+<link rel="preload" href="main.js" as="script">
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Hero cursor glow -->
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ============================================================
+     TOP NAV (sticky, shared across pages)
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <a class="logo" href="index.html">
+    <div class="mark">T</div>
+    <span>TymiY</span>
+  </a>
+  <div class="links">
+    <a class="navlink" href="services.html" data-i18n="nav.services">Project &amp; Services</a>
+    <a class="navlink" href="services.html#pricing" data-i18n="nav.price">Price</a>
+    <a class="navlink" href="about.html" data-i18n="nav.about">About Us</a>
+    <a class="navlink" href="about.html#contact" data-i18n="nav.contact">Contact Us</a>
+    <a class="navlink" href="about.html#faq" data-i18n="nav.faq">FAQ</a>
+  </div>
+  <div class="lang" role="group" aria-label="Language">
+    <button class="on" data-lang="EN">EN</button>
+    <button data-lang="ID">ID</button>
+  </div>
+  <button class="burger" id="burgerBtn" aria-label="Menu" data-ico="burger"></button>
+</nav>
+
+<!-- mobile drawer -->
+<div class="mob-drawer" id="mobDrawer">
+  <div class="panel">
+    <button class="close" id="drawerClose" data-ico="close"></button>
+    <a class="item" href="index.html" data-i18n="nav.home">Home</a>
+    <a class="item" href="services.html" data-i18n="nav.services">Project &amp; Services</a>
+    <a class="item" href="services.html#pricing" data-i18n="nav.price">Price</a>
+    <a class="item" href="about.html" data-i18n="nav.about">About Us</a>
+    <a class="item" href="about.html#contact" data-i18n="nav.contact">Contact Us</a>
+    <a class="item" href="about.html#faq" data-i18n="nav.faq">FAQ</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     PAGE 1 — LANDING
+     ============================================================ -->
+<main class="page active" data-page="landing">
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-orbs" aria-hidden="true">
+      <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+    </div>
+    <div class="container">
+      <div class="hero-stack">
+        <div class="hero-text centered">
+          <span class="eyebrow" data-reveal data-i18n="hero.eyebrow">For Indonesia's F&amp;B UMKM</span>
+          <h1 data-reveal data-reveal-delay="1">
+            <span data-i18n="hero.h1a">Digitalize your</span>
+            <span class="underline-svg word-rotator"><span class="word-track" id="wordRotator"><span class="word active" data-w="warung">warung</span><span class="word" data-w="café">café</span><span class="word" data-w="restoran">restoran</span><span class="word" data-w="kedai">kedai</span><span class="word" data-w="bakery">bakery</span></span><svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 8 C 40 2, 80 12, 120 6 S 180 2, 198 8"/></svg></span><span data-i18n="hero.h1c">,</span>
+            <br><span class="grad" data-i18n="hero.h1d">the simple way.</span>
+          </h1>
+          <p class="sub" data-reveal data-reveal-delay="2" data-i18n="hero.sub">
+            From street stalls to small restaurants — we set up QR ordering, digital menus, and the tooling to run your day-to-day. No tech headache. No hidden fees. Just a working system, on day one.
+          </p>
+          <div class="ctas" data-reveal data-reveal-delay="3">
+            <a href="services.html">
+              <span data-i18n="hero.cta1">See our services</span>
+              <span class="arr" data-ico="arrowR"></span>
+            </a>
+            <a href="about.html#contact">
+              <span data-i18n="hero.cta2">Talk to us</span>
+            </a>
+          </div>
+          <div class="meta" data-reveal data-reveal-delay="4">
+            <div><span class="dot"></span><span data-i18n="hero.meta1">Free setup &amp; trial</span></div>
+            <div><span class="dot"></span><span data-i18n="hero.meta2">Built for Indonesian UMKM</span></div>
+            <div><span class="dot"></span><span data-i18n="hero.meta3">Bahasa &amp; English support</span></div>
+          </div>
+          <div class="trust-strip" data-reveal data-reveal-delay="5">
+            <div class="avatar-stack">
+              <span class="av av1">B</span>
+              <span class="av av2">S</span>
+              <span class="av av3">D</span>
+              <span class="av av4">A</span>
+              <span class="av av5">+</span>
+            </div>
+            <div class="trust-text">
+              <span class="live-dot"></span>
+              <span data-i18n="hero.trust">Trusted by Indonesian warungs, cafés &amp; cloud kitchens</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" data-reveal data-reveal-delay="4">
+          <div class="hero-phone" data-svg="heroPhone"></div>
+          <div class="hero-chip c1">
+            <span class="ico" data-svg="iconQR"></span>
+            <span data-i18n="hero.chip1">Scan to order</span>
+          </div>
+          <div class="hero-chip c2">
+            <span class="ico" data-svg="iconBolt"></span>
+            <span data-i18n="hero.chip2">Live in 7 days</span>
+          </div>
+          <div class="hero-chip c3">
+            <span class="ico" data-svg="iconChat"></span>
+            <span data-i18n="hero.chip3">WhatsApp support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why TymiY — carousel -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-head centered" data-reveal>
+        <span class="eyebrow" data-i18n="why.eyebrow">Why TymiY?</span>
+        <h2 data-i18n="why.h2">Reasons for you to choose TymiY.</h2>
+        <p data-i18n="why.sub">We're built around how small Indonesian F&amp;B businesses actually work — not enterprise software in a tiny package.</p>
+      </div>
+    </div>
+    <div class="carousel" data-reveal>
+      <button class="car-nav prev" data-car-nav="-1" aria-label="Previous" data-ico="arrowL"></button>
+      <div class="car-track" data-car-track>
+        <div class="why-card" data-i="0">
+          <div class="ico" data-svg-key="whyIcons.local"></div>
+          <h3 data-i18n="why.t1">Local-first</h3>
+          <p data-i18n="why.d1">Built in Indonesia for Indonesian F&amp;B — Bahasa-native, QRIS-ready, and tuned for how your warung actually runs.</p>
+          <div class="deco"></div>
+        </div>
+        <div class="why-card" data-i="1">
+          <div class="ico" data-svg-key="whyIcons.fast"></div>
+          <h3 data-i18n="why.t2">Up &amp; running fast</h3>
+          <p data-i18n="why.d2">Most of our customers are taking digital orders in under a week. We handle the setup, you keep cooking.</p>
+          <div class="deco"></div>
+        </div>
+        <div class="why-card" data-i="2">
+          <div class="ico" data-svg-key="whyIcons.price"></div>
+          <h3 data-i18n="why.t3">UMKM-friendly pricing</h3>
+          <p data-i18n="why.d3">Free setup, free trial, simple monthly fee. No surprise charges and no setup invoices to ruin your week.</p>
+          <div class="deco"></div>
+        </div>
+        <div class="why-card" data-i="3">
+          <div class="ico" data-svg-key="whyIcons.support"></div>
+          <h3 data-i18n="why.t4">Real human support</h3>
+          <p data-i18n="why.d4">We pick up on WhatsApp. When something breaks at 9pm dinner rush, you reach a person — not a chatbot.</p>
+          <div class="deco"></div>
+        </div>
+        <div class="why-card" data-i="4">
+          <div class="ico" data-svg-key="whyIcons.growth"></div>
+          <h3 data-i18n="why.t5">Grows with you</h3>
+          <p data-i18n="why.d5">Start with QR ordering. Add loyalty, multi-outlet, ops dashboards — whenever you're ready. Never overbought.</p>
+          <div class="deco"></div>
+        </div>
+      </div>
+      <button class="car-nav next" data-car-nav="1" aria-label="Next" data-ico="arrowR"></button>
+    </div>
+    <div class="car-dots" data-car-dots></div>
+  </section>
+
+  <!-- Best Service -->
+  <section class="feature" id="best">
+    <div class="container">
+      <div class="section-head centered" data-reveal style="margin-bottom:36px">
+        <span class="eyebrow" data-i18n="best.eyebrow">Best Service</span>
+        <h2 data-i18n="best.h2">Our flagship: QR Ordering.</h2>
+      </div>
+      <div class="services-list" data-services-list>
+        <div class="feature-grid" data-reveal>
+          <div class="feature-body">
+            <span class="chip cyan" data-i18n="best.tag">QR Ordering</span>
+            <h2 data-i18n="best.title" style="margin-top:14px">The way ordering should work.</h2>
+            <p data-i18n="best.p">Customers scan, browse your menu in their own language, and pay — all without flagging down a server. Orders land straight in your kitchen.</p>
+            <ul class="feature-list">
+              <li><span class="check" data-ico="check"></span><span data-i18n="best.li1">Bahasa Indonesia &amp; English menus out of the box</span></li>
+              <li><span class="check" data-ico="check"></span><span data-i18n="best.li2">QRIS, e-wallet, and cash-at-table all supported</span></li>
+              <li><span class="check" data-ico="check"></span><span data-i18n="best.li3">Per-table or per-outlet QR codes, printed and shipped to you</span></li>
+              <li><span class="check" data-ico="check"></span><span data-i18n="best.li4">Real-time kitchen tickets via tablet or printer</span></li>
+            </ul>
+            <div class="ctas">
+              <a href="services.html">
+                <span data-i18n="best.cta1">Learn more</span><span class="arr" data-ico="arrowR"></span>
+              </a>
+              <a href="services.html#pricing">See pricing</a>
+            </div>
+          </div>
+          <div class="feature-visual" data-svg="featurePhone"></div>
+        </div>
+        <!-- NOTE: to add another best-service card, copy a <div class="feature-grid"> block above
+             inside this .services-list. Layout & animation will pick it up automatically. -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Steps -->
+  <section class="steps" id="how">
+    <div class="container">
+      <div class="steps-head" data-reveal>
+        <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+        <h2 data-i18n="how.h2">Three steps. That's it.</h2>
+        <p data-i18n="how.sub">No long contracts. No vendor lock-in. Just a simple path from "let's try" to "we're live."</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step" data-reveal data-reveal-delay="1">
+          <div class="n">1</div>
+          <div class="t" data-i18n="how.t1">Consult</div>
+          <div class="d" data-i18n="how.d1">We sit down (in person or on a call), understand your menu, your space, and your team. No jargon.</div>
+          <div class="icon" data-svg-key="stepIcons.consult"></div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="2">
+          <div class="n">2</div>
+          <div class="t" data-i18n="how.t2">Deploy</div>
+          <div class="d" data-i18n="how.d2">We set everything up, train your staff, and ship your printed QR codes. You're live within the week.</div>
+          <div class="icon" data-svg-key="stepIcons.deploy"></div>
+        </div>
+        <div class="step" data-reveal data-reveal-delay="3">
+          <div class="n">3</div>
+          <div class="t" data-i18n="how.t3">Maintain</div>
+          <div class="d" data-i18n="how.d3">Updates, support, and check-ins on us. Tweak your menu over WhatsApp and we'll handle the rest.</div>
+          <div class="icon" data-svg-key="stepIcons.maintain"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial marquee -->
+  <section class="marquee-section">
+    <div class="container">
+      <div class="marquee-head" data-reveal>
+        <span class="eyebrow" data-i18n="testi.eyebrow">Loved by F&amp;B owners</span>
+        <h2 data-i18n="testi.h2">Real words from real warungs.</h2>
+      </div>
+    </div>
+    <div class="marquee" id="testiMarquee">
+      <div class="marquee-track"></div>
+    </div>
+  </section>
+
+  <!-- Landing CTA (matches the services-page CTA) -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card" data-reveal>
+        <span class="eyebrow" data-i18n="cta.eyebrow">Ready when you are</span>
+        <h2 data-i18n="cta.h2">Let's get your F&amp;B online — this week.</h2>
+        <p data-i18n="cta.sub">Tell us a bit about your business and we'll set up a 20-minute call to figure out if we're a fit. Free, no pressure.</p>
+        <div class="ctas">
+          <a href="about.html#contact">
+            <span data-i18n="cta.cta1">Contact us now</span><span class="arr" data-ico="arrowR"></span>
+          </a>
+          <button class="btn btn-ghost" style="background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.15)" data-i18n="cta.cta2">
+            WhatsApp now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     SHARED FOOTER
+     ============================================================ -->
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div class="brand">
+        <div class="mark">T</div>
+        <div class="name">TymiY</div>
+        <p data-i18n="footer.tagline">Digital solutions built for Indonesia's F&amp;B UMKM. From warungs to small chains, we make going digital simple.</p>
+        <div class="socials">
+          <a aria-label="Instagram" data-ico="ig"></a>
+          <a aria-label="WhatsApp" data-ico="wa"></a>
+          <a aria-label="Email" data-ico="mail"></a>
+          <a aria-label="Phone" data-ico="phone"></a>
+        </div>
+      </div>
+      <div class="col">
+        <h4 data-i18n="footer.product">Product</h4>
+        <a href="services.html" data-i18n="footer.qr">QR Ordering</a>
+        <a href="services.html#pricing" data-i18n="footer.pricing">Pricing</a>
+        <a href="services.html" data-i18n="footer.projects">Projects</a>
+      </div>
+      <div class="col">
+        <h4 data-i18n="footer.company">Company</h4>
+        <a href="about.html" data-i18n="footer.about">About us</a>
+        <a href="about.html#contact" data-i18n="footer.contact">Contact</a>
+        <a href="about.html#faq" data-i18n="footer.faq">FAQ</a>
+      </div>
+      <div class="col contact-col">
+        <h4 data-i18n="footer.touch">Get in touch</h4>
+        <a class="with-ico"><span data-svg-key="social.wa"></span><span>+62 812-0000-0000</span></a>
+        <a class="with-ico" href="mailto:hello@tymiy.id"><span data-svg-key="social.mail"></span><span>hello@tymiy.id</span></a>
+        <a class="with-ico"><span data-svg-key="social.ig"></span><span>@tymiy.id</span></a>
+        <a class="with-ico"><span data-svg-key="social.phone"></span><span>+62 21 0000 0000</span></a>
+      </div>
+    </div>
+    <div class="copy">
+      <span data-i18n="footer.copy">© 2026 TymiY. Made in Indonesia.</span>
+      <div class="links">
+        <a data-i18n="footer.privacy">Privacy</a>
+        <a data-i18n="footer.terms">Terms</a>
+        <a data-i18n="footer.sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     PROJECT MODAL
+     ============================================================ -->
+<div class="modal-bg" id="projectModal" role="dialog" aria-modal="true">
+  <div class="modal modal-wide">
+    <button class="modal-x" id="modalClose" data-ico="close"></button>
+    <div class="modal-grid">
+      <div class="modal-demo">
+        <div class="modal-img" id="modalImg"></div>
+        <div class="modal-demo-bar">
+          <span class="chip" id="modalTag">Project</span>
+          <div class="demo-actions">
+            <button class="btn btn-blue btn-sm" id="modalDemo">
+              <span data-i18n="modal.demo">Try the live demo</span><span class="arr" data-ico="arrowR"></span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-demo-frame" id="modalDemoFrame" hidden>
+          <div class="phone-bezel">
+            <div class="phone-screen" data-svg="featurePhone"></div>
+          </div>
+          <div class="demo-caption" data-i18n="modal.demoCaption">Live, interactive demo. This is the actual customer ordering flow your guests would see.</div>
+        </div>
+      </div>
+      <div class="modal-side">
+        <div class="modal-section">
+          <h3 id="modalTitle">Project title</h3>
+          <p id="modalDesc">Project description placeholder.</p>
+          <div class="modal-meta" id="modalMeta"></div>
+        </div>
+        <div class="modal-section trust">
+          <h4 data-i18n="modal.trust">Why should you trust us?</h4>
+          <ul class="feature-list compact">
+            <li><span class="check" data-ico="check"></span><span data-i18n="modal.trust1">Built &amp; deployed by Indonesian F&amp;B veterans</span></li>
+            <li><span class="check" data-ico="check"></span><span data-i18n="modal.trust2">Live with real warungs &amp; cafés today</span></li>
+            <li><span class="check" data-ico="check"></span><span data-i18n="modal.trust3">Free trial — see results before you commit</span></li>
+            <li><span class="check" data-ico="check"></span><span data-i18n="modal.trust4">Real human WhatsApp support during dinner rush</span></li>
+          </ul>
+        </div>
+        <div class="modal-cta">
+          <a href="about.html#contact">
+            <span data-i18n="modal.cta">Talk to us about your business</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script defer src="illustrations.js"></script>
+<script defer src="main.js"></script>
+</body>
+</html>
